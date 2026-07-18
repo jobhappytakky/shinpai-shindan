@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>子どもの進路、親の心配タイプ診断｜ジョブハピ滝川</title>
+<meta name="description" content="10問・2分。その心配、子どものため？ 自分のため？ 国家資格キャリアコンサルタント×タロットのジョブハピ滝川がつくった、子どもの進路をめぐる親の心配の正体を言葉にする無料診断です。">
+<meta property="og:title" content="子どもの進路、親の心配タイプ診断">
+<meta property="og:description" content="その心配、子どものため？ 自分のため？ 10問・2分の無料診断。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://jobhappytakky.github.io/shinpai-shindan/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://jobhappytakky.github.io/shinpai-shindan/og-cover.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#3A2314;        /* 焦香の夜（確定） */
+  --night-deep:#281607;
+  --night-foot:#463019;
+  --gold:#C9A24B;
+  --gold-soft:#E4CD8B;
+  --paper:#F7F3E9;
+  --ink:#2E2620;
+  --ink-soft:#645A50;
+  --mist:#C9B49B;
+  --serif:'Shippori Mincho B1', serif;
+  --sans:'Zen Kaku Gothic New', sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--sans);
+  background:
+    radial-gradient(1px 1px at 18% 22%, rgba(228,205,139,.55) 50%, transparent 51%),
+    radial-gradient(1px 1px at 72% 12%, rgba(228,205,139,.4) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 85% 45%, rgba(228,205,139,.35) 50%, transparent 51%),
+    radial-gradient(1px 1px at 32% 68%, rgba(228,205,139,.3) 50%, transparent 51%),
+    radial-gradient(1px 1px at 60% 85%, rgba(228,205,139,.45) 50%, transparent 51%),
+    linear-gradient(180deg, var(--night-deep) 0%, var(--night) 55%, var(--night-foot) 100%);
+  background-attachment:fixed;
+  color:var(--paper);
+  min-height:100vh;
+  line-height:1.9;
+}
+.wrap{max-width:560px;margin:0 auto;padding:28px 22px 64px}
+.screen{display:none}
+.screen.active{display:block;animation:fadein .5s ease}
+@keyframes fadein{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* ---------- 共通パーツ ---------- */
+.eyebrow{
+  font-size:12px;letter-spacing:.32em;color:var(--gold-soft);
+  text-align:center;text-transform:uppercase;margin-bottom:14px;
+}
+.rule{
+  width:56px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  margin:22px auto;border:none;
+}
+.btn{
+  display:block;width:100%;padding:16px 20px;border-radius:6px;
+  font-family:var(--sans);font-size:16px;font-weight:700;letter-spacing:.08em;
+  cursor:pointer;text-align:center;text-decoration:none;
+  transition:transform .15s ease, opacity .15s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.98)}
+.btn-gold{
+  background:linear-gradient(135deg,#D4B05C,var(--gold));
+  color:var(--night-deep);border:none;
+  box-shadow:0 6px 24px rgba(201,162,75,.28);
+}
+.btn-ghost{
+  background:transparent;color:var(--mist);border:1px solid rgba(201,180,155,.35);
+  font-weight:500;font-size:14px;
+}
+.footer-note{
+  margin-top:48px;text-align:center;font-size:11.5px;color:var(--mist);line-height:2;
+}
+.footer-note a{color:var(--mist)}
+.cross-link{
+  margin-top:22px;text-align:center;font-size:12.5px;letter-spacing:.06em;
+}
+.cross-link a{color:var(--mist);text-decoration:underline;text-underline-offset:4px}
+
+/* ---------- イントロ ---------- */
+#intro .brand{
+  text-align:center;font-size:12.5px;letter-spacing:.18em;color:var(--mist);margin-bottom:34px;
+}
+#intro h1{
+  font-family:var(--serif);font-weight:700;
+  font-size:clamp(20px,6.4vw,34px);line-height:1.7;letter-spacing:.04em;
+  text-align:center;margin-bottom:8px;
+}
+#intro h1 .line{display:inline-block;white-space:nowrap}
+#intro h1 .accent{color:var(--gold-soft)}
+#intro .subtitle{
+  text-align:center;font-family:var(--serif);font-size:15px;letter-spacing:.18em;
+  color:var(--gold-soft);margin-bottom:30px;
+}
+#intro .lede{
+  font-size:14.5px;color:#E6DACB;line-height:2.15;margin-bottom:8px;
+}
+#intro .meta{
+  display:flex;justify-content:center;gap:26px;margin:30px 0 34px;
+  font-size:13px;color:var(--mist);letter-spacing:.1em;
+}
+#intro .meta span b{color:var(--gold-soft);font-family:var(--serif);font-size:17px;margin-right:2px}
+
+/* ---------- 設問 ---------- */
+#quiz .progress-label{
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-size:12px;letter-spacing:.2em;color:var(--mist);margin-bottom:8px;
+}
+#quiz .progress-label b{font-family:var(--serif);font-size:18px;color:var(--gold-soft);letter-spacing:.05em}
+.progress-track{height:2px;background:rgba(201,180,155,.25);border-radius:2px;overflow:hidden;margin-bottom:44px}
+.progress-bar{height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--gold-soft));transition:width .4s ease}
+#quiz .qtext{
+  font-family:var(--serif);font-weight:600;
+  font-size:clamp(19px,5.6vw,23px);line-height:1.9;letter-spacing:.04em;
+  min-height:5.4em;margin-bottom:34px;
+}
+.opt{
+  background:rgba(247,243,233,.05);
+  border:1px solid rgba(228,205,139,.32);
+  color:var(--paper);border-radius:6px;
+  margin-bottom:14px;font-weight:500;
+}
+.opt:hover{background:rgba(228,205,139,.12)}
+#quiz .back{
+  margin-top:26px;background:none;border:none;color:var(--mist);
+  font-family:var(--sans);font-size:13px;letter-spacing:.1em;cursor:pointer;
+  text-decoration:underline;text-underline-offset:4px;
+}
+
+/* ---------- 結果：カード ---------- */
+.card-stage{display:flex;justify-content:center;margin:30px 0 10px;perspective:1200px}
+.tarot{
+  width:min(180px, 46vw);aspect-ratio:333/600;position:relative;
+  transform-style:preserve-3d;
+  transition:transform 1.1s cubic-bezier(.2,.7,.25,1);
+}
+.tarot.flipped{transform:rotateY(180deg)}
+.tarot-face{
+  position:absolute;inset:0;border-radius:10px;
+  backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  overflow:hidden;
+}
+.tarot-back{
+  background:
+    radial-gradient(circle at 50% 50%, rgba(228,205,139,.16) 0, transparent 42%),
+    repeating-linear-gradient(45deg, rgba(228,205,139,.1) 0 2px, transparent 2px 14px),
+    linear-gradient(160deg,#4C3319,#241305);
+  border:1px solid rgba(228,205,139,.5);
+  box-shadow:0 14px 44px rgba(0,0,0,.5);
+}
+.tarot-back::after{
+  content:'✶';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-size:34px;color:var(--gold-soft);opacity:.8;
+}
+.tarot-front{
+  transform:rotateY(180deg);
+  background:linear-gradient(170deg,#FBF8F0,#EFE8D6);
+  border:1px solid var(--gold);
+  box-shadow:0 14px 44px rgba(0,0,0,.5);
+  color:var(--ink);
+  display:flex;flex-direction:column;
+}
+.tarot-front .inner{
+  position:absolute;inset:9px;border:1px solid rgba(201,162,75,.65);border-radius:6px;
+  display:flex;flex-direction:column;align-items:center;justify-content:space-between;
+  padding:16px 12px;
+}
+.tarot-front .numeral{
+  font-family:var(--serif);font-size:15px;letter-spacing:.28em;color:#8A6E2F;
+}
+.tarot-front .cname{
+  font-family:var(--serif);font-weight:700;font-size:30px;letter-spacing:.3em;
+  writing-mode:vertical-rl;color:var(--ink);
+}
+.tarot-front .orn{font-size:15px;color:var(--gold);letter-spacing:.4em}
+.tarot-front img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:contain;border-radius:9px;
+  background:#FBF8F0;
+}
+.card-caption{text-align:center;font-size:12px;letter-spacing:.28em;color:var(--mist);margin-bottom:26px}
+
+/* ---------- 結果：本文 ---------- */
+#result .rtitle{
+  text-align:center;font-family:var(--serif);font-weight:700;
+  font-size:clamp(24px,6.8vw,30px);letter-spacing:.06em;line-height:1.7;margin-bottom:6px;
+}
+#result .rsub{
+  text-align:center;font-size:13.5px;color:var(--gold-soft);letter-spacing:.12em;margin-bottom:30px;
+}
+.paper-box{
+  background:var(--paper);color:var(--ink);border-radius:8px;
+  padding:26px 24px;margin-bottom:18px;
+  box-shadow:0 10px 34px rgba(0,0,0,.32);
+}
+.paper-box .label{
+  font-size:11.5px;letter-spacing:.3em;color:#8A6E2F;font-weight:700;margin-bottom:12px;
+}
+.paper-box p{font-size:14.5px;line-height:2.2;color:var(--ink)}
+.paper-box p + p{margin-top:14px}
+.paper-box .aside{color:var(--ink-soft);font-size:13.5px}
+.cta-box{
+  background:rgba(247,243,233,.06);
+  border:1px solid rgba(228,205,139,.4);border-radius:8px;
+  padding:22px 20px;margin:30px 0 14px;
+}
+.profile{display:flex;align-items:center;gap:13px;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid rgba(228,205,139,.22)}
+.pfp{
+  width:50px;height:50px;border-radius:50%;flex-shrink:0;overflow:hidden;
+  border:1px solid var(--gold);
+  background:linear-gradient(160deg,#4C3319,#241305);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-size:20px;color:var(--gold-soft);
+}
+.pfp img{width:100%;height:100%;object-fit:cover}
+.pmeta b{display:block;font-family:var(--serif);font-size:15.5px;letter-spacing:.08em;color:var(--paper)}
+.pmeta span{display:block;font-size:11px;color:var(--mist);letter-spacing:.06em;margin-top:2px}
+.cta-box .lead{font-size:13.5px;color:#E6DACB;line-height:2.05;margin-bottom:16px}
+.cta-box img.thumb{
+  width:100%;border-radius:6px;margin-bottom:14px;display:block;
+  border:1px solid rgba(228,205,139,.25);
+}
+.share-row{margin-top:14px}
+.tell-row{margin-top:10px}
+#result .retry{margin-top:12px}
+
+@media (prefers-reduced-motion: reduce){
+  .tarot{transition:none}
+  .screen.active{animation:none}
+  .progress-bar{transition:none}
+}
+
+/* ---------- 検収パネル（demo専用） ---------- */
+#demoPanel{position:fixed;right:10px;bottom:10px;z-index:99;background:rgba(15,9,4,.92);
+  border:1px solid rgba(228,205,139,.5);border-radius:8px;padding:10px;max-width:270px;
+  font-size:11px;line-height:1.6}
+#demoPanel h4{font-size:11px;color:var(--gold-soft);letter-spacing:.1em;margin-bottom:6px}
+#demoPanel .dgrid{display:grid;grid-template-columns:1fr 1fr;gap:4px;max-height:300px;overflow:auto}
+#demoPanel button{font-family:var(--sans);font-size:10.5px;padding:5px 4px;border-radius:4px;
+  background:rgba(247,243,233,.06);border:1px solid rgba(228,205,139,.3);color:var(--paper);cursor:pointer}
+#demoPanel .toggle{width:100%;margin-top:6px;background:none;border:none;color:var(--mist);
+  text-decoration:underline;cursor:pointer;font-size:10.5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ============ イントロ ============ -->
+  <section id="intro" class="screen active">
+    <p class="brand">ジョブハピ滝川｜国家資格キャリコン × タロット</p>
+    <p class="eyebrow">Oya no Shinpai Shindan</p>
+    <h1><span class="line">その<span class="accent">心配</span>、子どものため？</span><br><span class="line">自分のため？</span></h1>
+    <hr class="rule">
+    <p class="subtitle">子どもの進路、親の心配タイプ診断</p>
+    <p class="lede">進路のこと、なんとなく気になっている。でも、何が心配なのかと聞かれると、うまく言えない。そんな親の心配の「正体」を、10の質問で言葉にする診断です。最後に、いまのあなたに1枚のカードが出ます。</p>
+    <div class="meta">
+      <span><b>10</b>問</span>
+      <span>約<b>2</b>分</span>
+      <span><b>無料</b></span>
+    </div>
+    <button class="btn btn-gold" onclick="startQuiz()">診断をはじめる</button>
+    <p class="footer-note">この診断は、自分の心配をながめるための読みものです。<br>お子さんや子育てを判定するものではありません。</p>
+  </section>
+
+  <!-- ============ 設問 ============ -->
+  <section id="quiz" class="screen">
+    <div class="progress-label"><span>QUESTION</span><span><b id="qnum">1</b> / 10</span></div>
+    <div class="progress-track"><div class="progress-bar" id="pbar"></div></div>
+    <p class="qtext" id="qtext"></p>
+    <button class="btn opt" onclick="answer(2)">よくある</button>
+    <button class="btn opt" onclick="answer(1)">たまにある</button>
+    <button class="btn opt" onclick="answer(0)">ほとんどない</button>
+    <button class="back" id="backBtn" onclick="goBack()">ひとつ前にもどる</button>
+  </section>
+
+  <!-- ============ 結果 ============ -->
+  <section id="result" class="screen">
+    <p class="eyebrow">Your Card</p>
+    <div class="card-stage">
+      <div class="tarot" id="tarot" onclick="flipCard()">
+        <div class="tarot-face tarot-back"></div>
+        <div class="tarot-face tarot-front" id="cardFront">
+          <div class="inner">
+            <div class="numeral" id="cardNumeral"></div>
+            <div class="cname" id="cardName"></div>
+            <div class="orn">✶ ✶ ✶</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="card-caption" id="cardCaption">カードをタップしてめくる</p>
+
+    <h2 class="rtitle" id="rTitle"></h2>
+    <p class="rsub" id="rSub"></p>
+
+    <div class="paper-box">
+      <p class="label">心配の正体</p>
+      <p id="rMain"></p>
+      <p class="aside" id="rAside"></p>
+    </div>
+
+    <div class="paper-box" id="stepBox">
+      <p class="label">明日の一歩</p>
+      <p id="rStep"></p>
+    </div>
+
+    <div class="paper-box">
+      <p class="label">カードの意味</p>
+      <p id="rCard"></p>
+    </div>
+
+    <div class="cta-box" id="ctaBox">
+      <a class="profile" id="profileLink" style="text-decoration:none" target="_blank" rel="noopener">
+        <div class="pfp" id="pfp">滝</div>
+        <div class="pmeta"><b>ジョブハピ滝川</b><span>国家資格キャリアコンサルタント × タロット</span></div>
+      </a>
+      <p class="lead" id="ctaLead"></p>
+      <img class="thumb" id="ctaThumb" alt="" style="display:none">
+      <a class="btn btn-gold" id="ctaBtn" target="_blank" rel="noopener"></a>
+    </div>
+
+    <div class="share-row" style="display:flex;gap:10px">
+      <a class="btn btn-ghost" id="shareBtn" target="_blank" rel="noopener">Xでシェア</a>
+      <a class="btn btn-ghost" id="shareThreadsBtn" target="_blank" rel="noopener">Threadsでシェア</a>
+    </div>
+    <div class="tell-row">
+      <button class="btn btn-ghost" id="tellBtn" onclick="tellFriend()">この診断を教える（リンクをコピー）</button>
+    </div>
+    <button class="btn btn-ghost retry" onclick="location.reload()">もう一度診断する</button>
+
+    <p class="cross-link">姉妹診断｜<a href="https://jobhappytakky.github.io/moyamoya-shindan/" id="crossLink" target="_blank" rel="noopener">仕事のモヤモヤ正体診断</a></p>
+
+    <p class="footer-note">子どもの進路、親の心配タイプ診断<br>ジョブハピ滝川｜国家資格キャリコン × タロット</p>
+  </section>
+
+</div>
+
+<script>
+/* ============================================================
+   設定：GASのWebアプリURLを貼ると、リンク・サムネ・画像を
+   スプレッドシートから読み込み、結果ログを記録します。
+   空のままでも診断はページ内蔵のデフォルト設定で完全動作します。
+============================================================ */
+const GAS_URL = '';
+
+/* プロフィールアイコンのURL（空なら「滝」の意匠丸で表示） */
+const PROFILE_IMG = 'icon.png';
+
+/* プロフィールのリンク先（XのプロフィールURL。空ならリンクなし） */
+const PROFILE_URL = 'https://x.com/jobhappy_takky';
+
+/* ---------- 設問（Q番号→タイプ軸） ---------- */
+const QUESTIONS = [
+  {t:'sakimawari', q:'進路や教育の情報を、気づくと夜遅くまで調べていることがある'},
+  {t:'hikaku',     q:'よその子の話を聞くと、心が少しざわつく'},
+  {t:'kyorikan',   q:'口を出しすぎたかなと、後から一人で反省することがある'},
+  {t:'kasane',     q:'自分が学生の頃の後悔を、この子には味わわせたくないと強く思う'},
+  {t:'namae',      q:'何が心配なのかと聞かれると、うまく説明できない'},
+  {t:'sakimawari', q:'子どもの5年後、10年後を想像して、不安になることがある'},
+  {t:'hikaku',     q:'SNSや周りの「できる子」の話が、頭に残ってしまう'},
+  {t:'kyorikan',   q:'見守るのと放っておくのの境目が、分からなくなる時がある'},
+  {t:'kasane',     q:'気づくと「自分の頃はこうだった」と話している'},
+  {t:'namae',      q:'心配というほどではないのに、子どものことを考えると胸の奥が少し重い'}
+];
+
+/* ---------- 5タイプ本文（確定版モジュール） ---------- */
+const TYPES = {
+  sakimawari:{
+    name:'先回り型',
+    main:'あなたの心配の中心は、「先回り」のようです。まだ来ていない未来を先に歩いて、調べて、備えている。それは過保護だからではなく、子どもの未来を自分ごととして引き受けている証拠でもあります。ただ、親が先に歩いた道も、子どもにとってはまだ白紙のままです。',
+    step:'子どもが「今」夢中になっているものを、1つ思い浮かべてみてください。未来のヒントは、たいてい今の中に落ちています。',
+    aside:'そこに少しだけ、未来へ先回りして備えたくなる気持ちも混ざっているようです。'
+  },
+  hikaku:{
+    name:'比較型',
+    main:'あなたの心配の中心は、「比較」のようです。よその子の話や、周りの「できる子」の情報に、心がざわつく。それは意地悪な気持ちではなく、わが子を大切に思うからこそ、物差しを探してしまうのです。ただ、その物差しの目盛りは、よその家の単位で刻まれています。',
+    step:'今日、子どもが「昨日より」できたことを1つ探してみてください。比べる相手を昨日のわが子に変えると、同じ心配が応援の顔つきに変わってきます。',
+    aside:'そこに少しだけ、周りの子と比べてしまうざわつきも混ざっているようです。'
+  },
+  kyorikan:{
+    name:'距離感型',
+    main:'あなたの心配の中心は、「距離感」のようです。口を出せば「言いすぎたかな」、黙っていれば「放っておきすぎかな」。どちらに立っても落ち着かないのは、無関心だからではなく、ちょうどいい関わり方を真剣に探し続けているからです。正解の距離は子どもの成長と一緒に動くもので、迷うのはむしろ自然なことです。',
+    step:'今日1回だけ、言いたくなったことを「それ、どう思う？」と質問の形に変えてみてください。ちょうどいい距離は、答えを渡す側より、聞く側にいる時に見つかりやすくなります。',
+    aside:'そこに少しだけ、どこまで関わるかという迷いも混ざっているようです。'
+  },
+  kasane:{
+    name:'自分重ね型',
+    main:'あなたの心配の中心には、「あの頃の自分」がいるようです。自分の学生の頃の後悔や遠回りを、この子には味わわせたくない。その気持ちは、あなたが自分の道のりをちゃんと振り返ってきた証拠でもあります。ただ、親の後悔から描いた地図は、子どもの現在地とは別の場所から始まっています。',
+    step:'「自分の頃はこうだった」と言いたくなったら、一度だけ「あなたはどう思ってるの？」に言い換えてみてください。主語が変わると、見える景色も変わります。',
+    aside:'そこに少しだけ、あの頃の自分の面影も混ざっているようです。'
+  },
+  namae:{
+    name:'名前まだ型',
+    main:'あなたの心配には、まだ名前がついていない段階のようです。何が心配なのかと聞かれても、うまく説明できない。それは心配していないからではなく、むしろ子どものことを丸ごと考えているからこそ、一言にまとまらないのです。輪郭の見えないもやは、親の愛情のいちばん素直な形なのかもしれません。',
+    step:'子どものことでもやっとした瞬間に、その場で一言だけメモしてみてください。3つ集まる頃には、心配の輪郭が見え始めます。',
+    aside:'そこに少しだけ、まだ言葉になっていない心配も残っているようです。'
+  }
+};
+
+/* ---------- 特殊2結果 ---------- */
+const SPECIALS = {
+  moya:{
+    name:'心配のもや',
+    title:'心配のぜんぶが、一度に押し寄せている時期',
+    main:'どの項目も高めでした。先回りも、比較も、距離の迷いも、全部が一度に押し寄せている状態かもしれません。それだけ多くの心配を、一人で抱えてきたということでもあります。夜のもやの中では、どの道もすべて同じに見えるものです。全部を今夜晴らす必要はありません。',
+    step:'一番気になっていることを1つだけ、書き出してみてください。心配は、名前をつけたところから薄くなっていきます。',
+    card:'月'
+  },
+  mimamori:{
+    name:'見守り上手',
+    title:'今のあなたは、ちょうどいい距離で見守れているようです',
+    main:'どの項目も低めでした。もしかすると今のあなたは、心配と信頼のバランスが、ちょうどいいところに落ち着いているのかもしれません。それは無関心ということではなく、お子さんを信じて見守れているということです。この診断がお役に立てることは、今日はなさそうです。その距離感を、どうぞそのまま大切に。またもやもやした時は、いつでもどうぞ。',
+    step:null,
+    card:'世界'
+  }
+};
+
+/* ---------- 主×副→カード ---------- */
+const CARD_MATRIX = {
+  sakimawari:{hikaku:'戦車', kyorikan:'皇帝', kasane:'運命の輪', namae:'女教皇'},
+  hikaku:    {sakimawari:'正義', kyorikan:'恋人', kasane:'星', namae:'隠者'},
+  kyorikan:  {sakimawari:'節制', hikaku:'力', kasane:'吊るされた男', namae:'教皇'},
+  kasane:    {sakimawari:'審判', hikaku:'死神', kyorikan:'魔術師', namae:'女帝'},
+  namae:     {sakimawari:'愚者', hikaku:'太陽', kyorikan:'塔', kasane:'悪魔'}
+};
+
+/* ---------- カード意味づけ22本＋番号 ---------- */
+const CARDS = {
+  '愚者':{n:'0',m:'旅の始まりのカードです。親の心配がまだ言葉にならないうちに、子どもはもう歩き出しています。その足取りを、少し後ろから眺めてみるのも悪くありません。'},
+  '魔術師':{n:'I',m:'始まりの才能のカードです。子どもの机の上に、道具はもう揃い始めています。親が足してあげるより、使うところを見守る番かもしれません。'},
+  '女教皇':{n:'II',m:'静けさと直感のカードです。うまく言葉にできないけれど、何か感じている。そんな気配が、あなたの中にあるようです。急いで言葉にしなくて大丈夫。胸の中で温めておく時期かもしれません。'},
+  '女帝':{n:'III',m:'愛情と豊かさのカードです。自分と重ねてしまうのは、注いできた愛情が本物だからです。注ぐ量はそのままに、注ぎ方を整える時期のようです。'},
+  '皇帝':{n:'IV',m:'枠組みと設計のカードです。レールを敷ける力は、立派な能力です。ただ、親の設計図と本人の地図は、別の紙に描かれています。'},
+  '教皇':{n:'V',m:'対話のカードです。ちょうどいい距離は、一人で考えるより、誰かに話しながらの方が見つかりやすいものです。話を聴いてもらうこと自体が、次の扉になるかもしれません。'},
+  '恋人':{n:'VI',m:'選択のカードです。周りと比べるほど、選べなくなっていきます。基準を「よそ」から「わが子」に戻すと、迷いはずいぶん軽くなるはずです。'},
+  '戦車':{n:'VII',m:'前へ進む力のカードです。その推進力は、あなたの強みでもあります。ただ、速さより先に、走る方向を親子で確かめる時のようです。'},
+  '力':{n:'VIII',m:'しなやかな強さのカードです。力ずくで引っ張るのでも、我慢して黙るのでもない。信じて手を離すことも、強さの一つの形です。'},
+  '隠者':{n:'IX',m:'灯りのカードです。外の眩しさから少し目を離して、手元の灯りで照らし直す時のようです。灯りは、近くを照らすのが一番得意です。'},
+  '運命の輪':{n:'X',m:'巡りのカードです。自分と同じ苦労をさせたくない。その気持ちには、あなたが歩いてきた道の重みがあります。ただ、子どもの輪は、別の速さで回り始めています。'},
+  '正義':{n:'XI',m:'天秤のカードです。比べて測ってしまうのは、真剣に考えている証拠です。ただ、測り続けて心が疲れているなら、それは物差しの方を見直す合図かもしれません。'},
+  '吊るされた男':{n:'XII',m:'視点が変わるカードです。関わり方に迷って動けない時期は、実は子どもの目線に立ってみる時期でもあります。逆さまだから見えるものがあります。'},
+  '死神':{n:'XIII',m:'怖い絵ですが、意味は「終わりと再生」。自分の物語の続きを子どもに託す時期が終わり、子ども自身の物語が始まろうとしています。'},
+  '節制':{n:'XIV',m:'配合のカードです。手を出す量と、任せる量。どちらかが正解なのではなく、混ぜる割合を調整し続けるのが子育てなのかもしれません。今は、その配合を静かに直す時期のようです。'},
+  '悪魔':{n:'XV',m:'鎖のカードです。「親はこうあるべき」という縛りが、心配の正体かもしれません。よく見るとその鎖は、ゆるく掛かっているだけです。'},
+  '塔':{n:'XVI',m:'怖い絵ですが、意味は「建て直し」。今の関わり方を一度組み直すサインのようです。崩れる前が、一番苦しいのです。'},
+  '星':{n:'XVII',m:'希望のカードです。遠くの光がまぶしく見える夜ほど、近くの光を見落としがちです。うちの子の光は、別の場所で灯っています。'},
+  '月':{n:'XVIII',m:'夜道のカードです。先が見えないのは、道がないからではなく、まだ暗いだけです。夜は、必ず明けていきます。'},
+  '太陽':{n:'XIX',m:'明るさのカードです。よその子と見比べている時は、影の部分ばかりが目に入るものです。光の下で正面から見てみると、あなたの子は案外、元気に笑っています。'},
+  '審判':{n:'XX',m:'呼び声のカードです。心の奥で鳴っているその音は、子どもの声というより、あの頃の自分の声かもしれません。気づいた人から、聞き分けられるようになるはずです。'},
+  '世界':{n:'XXI',m:'完成のカードです。心配しすぎず、構いすぎず。親子の間に、ほどよい信頼ができあがっていることが伝わってきます。'}
+};
+
+/* ---------- CTAデフォルト（GAS設定があれば上書きされる） ---------- */
+const CTA_DEFAULT = {
+  sakimawari:{label:'この子の進路をみてもらう', url:'https://coconala.com/services/4188585', thumb:'', show:true},
+  hikaku:    {label:'うちの子の光をみてもらう', url:'https://coconala.com/services/4188585', thumb:'', show:true},
+  kyorikan:  {label:'ちょうどいい距離をみてもらう', url:'https://coconala.com/services/4188585', thumb:'', show:true},
+  kasane:    {label:'この子自身の道をみてもらう', url:'https://coconala.com/services/4188585', thumb:'', show:true},
+  namae:     {label:'この心配の正体をみてもらう', url:'https://coconala.com/services/4188585', thumb:'', show:true},
+  moya:      {label:'心配をまるごとみてもらう', url:'https://coconala.com/services/4188585', thumb:'', show:true},
+  mimamori:  {label:'', url:'', thumb:'', show:false}
+};
+const CTA_LEAD = 'この心配を、もっとちゃんと言葉にしたい方へ。国家資格キャリアコンサルタントが、お子さんの可能性と関わり方を、鑑定書というかたちでお作りしています。';
+const CARD_IMAGES = { /* リポジトリ同梱のライダー版。スプシ「カード画像」シートのURLがあれば上書き可能 */
+  '愚者':'0fool.jpg', '魔術師':'1magician.jpg', '女教皇':'2highpreistess.jpg',
+  '女帝':'3empress.jpg', '皇帝':'4emperor.jpg', '教皇':'5hierophant.jpg',
+  '恋人':'6lovers.jpg', '戦車':'7chariot.jpg', '力':'8strength.jpg',
+  '運命の輪':'10fortune.jpg', '正義':'11justice.jpg', '吊るされた男':'12hangedman.jpg',
+  '死神':'13death.jpg', '節制':'14temperance.jpg', '悪魔':'15devil.jpg',
+  '塔':'16tower.jpg', '星':'17star.jpg', '月':'18moon.jpg',
+  '太陽':'19sun.jpg', '世界':'21world.jpg',
+  '隠者':'9hermit.jpg', '審判':'20judgement.jpg'
+};
+
+/* ---------- 同点時の優先順位（名前まだを最優先・断定度の低い順） ---------- */
+const PRIORITY = ['namae','kyorikan','hikaku','sakimawari','kasane'];
+
+/* カード名→シェアページslug（結果別OGP用） */
+const SITE_BASE = 'https://jobhappytakky.github.io/shinpai-shindan/';
+const CARD_SLUGS = {
+  '愚者':'fool','魔術師':'magician','女教皇':'priestess','女帝':'empress',
+  '皇帝':'emperor','教皇':'hierophant','恋人':'lovers','戦車':'chariot',
+  '力':'strength','隠者':'hermit','運命の輪':'fortune','正義':'justice',
+  '吊るされた男':'hangedman','死神':'death','節制':'temperance','悪魔':'devil',
+  '塔':'tower','星':'star','月':'moon','太陽':'sun','審判':'judgement','世界':'world'
+};
+
+/* 「この診断を教える」で配る文言（結果情報は含まない） */
+const TELL_TEXT = '子どもの進路の心配に、名前がつく診断です。10問・2分。\n';
+
+/* ============================================================ */
+let config = {cta: JSON.parse(JSON.stringify(CTA_DEFAULT)), cards:{}};
+document.addEventListener('DOMContentLoaded', () => {
+  if (PROFILE_IMG) {
+    document.getElementById('pfp').innerHTML = '<img src="' + PROFILE_IMG + '" alt="ジョブハピ滝川">';
+  }
+  if (PROFILE_URL) {
+    document.getElementById('profileLink').href = PROFILE_URL;
+  }
+  document.getElementById('crossLink').addEventListener('click', () => {
+    logEvent({event:'cross_click', main:'', sub:'', card:''});
+  });
+});
+let step = 0;
+const answers = [];
+
+/* GAS設定の読み込み（失敗しても内蔵デフォルトで動く） */
+if (GAS_URL) {
+  fetch(GAS_URL + '?action=config')
+    .then(r => r.json())
+    .then(d => {
+      if (d && d.cta) {
+        for (const k in d.cta) {
+          if (config.cta[k]) Object.assign(config.cta[k], d.cta[k]);
+        }
+      }
+      if (d && d.cards) Object.assign(config.cards, d.cards);
+    })
+    .catch(() => {});
+}
+
+function logEvent(payload){
+  if (!GAS_URL) return;
+  try {
+    fetch(GAS_URL, {method:'POST', mode:'no-cors',
+      headers:{'Content-Type':'text/plain'},
+      body: JSON.stringify(payload)});
+  } catch(e){}
+}
+
+function show(id){
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+
+function startQuiz(){
+  step = 0; answers.length = 0;
+  renderQuestion();
+  show('quiz');
+}
+
+function renderQuestion(){
+  document.getElementById('qnum').textContent = step + 1;
+  document.getElementById('pbar').style.width = (step / QUESTIONS.length * 100) + '%';
+  document.getElementById('qtext').textContent = QUESTIONS[step].q;
+  document.getElementById('backBtn').style.visibility = step === 0 ? 'hidden' : 'visible';
+}
+
+function answer(v){
+  answers[step] = v;
+  step++;
+  if (step < QUESTIONS.length) { renderQuestion(); }
+  else { finish(); }
+}
+
+function goBack(){
+  if (step > 0) { step--; renderQuestion(); }
+}
+
+function finish(){
+  const scores = {sakimawari:0, hikaku:0, kyorikan:0, kasane:0, namae:0};
+  QUESTIONS.forEach((q,i) => { scores[q.t] += answers[i] || 0; });
+
+  const axes = Object.keys(scores);
+  const allHigh = axes.every(k => scores[k] >= 3);
+  const allLow  = axes.every(k => scores[k] <= 1);
+
+  let resultKey, mainT = null, subT = null, cardName;
+
+  if (allHigh) {
+    resultKey = 'moya'; cardName = SPECIALS.moya.card;
+  } else if (allLow) {
+    resultKey = 'mimamori'; cardName = SPECIALS.mimamori.card;
+  } else {
+    const sorted = axes.slice().sort((a,b) => {
+      if (scores[b] !== scores[a]) return scores[b] - scores[a];
+      return PRIORITY.indexOf(a) - PRIORITY.indexOf(b);
+    });
+    mainT = sorted[0]; subT = sorted[1];
+    resultKey = mainT;
+    cardName = CARD_MATRIX[mainT][subT];
+  }
+
+  renderResult(resultKey, mainT, subT, cardName);
+  logEvent({event:'complete',
+    main: mainT ? TYPES[mainT].name : SPECIALS[resultKey].name,
+    sub:  subT ? TYPES[subT].name : '',
+    card: cardName});
+  show('result');
+}
+
+function renderResult(key, mainT, subT, cardName){
+  const card = CARDS[cardName];
+
+  /* カード面：画像があれば差し込み、なければ意匠カード */
+  const front = document.getElementById('cardFront');
+  const img = config.cards[cardName] || CARD_IMAGES[cardName];
+  if (img) {
+    front.innerHTML = '<img src="' + img + '" alt="' + cardName + '">';
+  } else {
+    document.getElementById('cardNumeral').textContent = card.n;
+    document.getElementById('cardName').textContent = cardName;
+  }
+
+  if (mainT) {
+    document.getElementById('rTitle').textContent = TYPES[mainT].name;
+    document.getElementById('rSub').textContent = '隠し味：' + TYPES[subT].name.replace('型','');
+    document.getElementById('rMain').textContent = TYPES[mainT].main;
+    document.getElementById('rAside').textContent = TYPES[subT].aside;
+    document.getElementById('rStep').textContent = TYPES[mainT].step;
+    document.getElementById('stepBox').style.display = '';
+  } else {
+    const sp = SPECIALS[key];
+    document.getElementById('rTitle').textContent = sp.title;
+    document.getElementById('rSub').textContent = '';
+    document.getElementById('rMain').textContent = sp.main;
+    document.getElementById('rAside').textContent = '';
+    if (sp.step) {
+      document.getElementById('rStep').textContent = sp.step;
+      document.getElementById('stepBox').style.display = '';
+    } else {
+      document.getElementById('stepBox').style.display = 'none';
+    }
+  }
+
+  document.getElementById('rCard').textContent = '【' + cardName + '】 ' + card.m;
+  window._currentCard = {name: cardName, n: card.n};
+  window._currentResult = {key, mainT, subT, cardName};
+
+  /* CTA */
+  const cta = config.cta[key] || {show:false};
+  const box = document.getElementById('ctaBox');
+  if (cta.show && cta.url) {
+    box.style.display = '';
+    document.getElementById('ctaLead').textContent = CTA_LEAD;
+    const btn = document.getElementById('ctaBtn');
+    btn.textContent = cta.label;
+    btn.href = cta.url;
+    btn.onclick = () => logEvent({event:'cta_click',
+      main: mainT ? TYPES[mainT].name : SPECIALS[key].name,
+      sub: subT ? TYPES[subT].name : '', card: cardName});
+    const th = document.getElementById('ctaThumb');
+    if (cta.thumb) { th.src = cta.thumb; th.style.display = 'block'; }
+    else { th.style.display = 'none'; }
+  } else {
+    box.style.display = 'none';
+  }
+
+  /* シェア */
+  const resultName = mainT ? TYPES[mainT].name : SPECIALS[key].name;
+  const text = '子どもの進路、親の心配タイプ診断で「' + resultName + '」でした。出たカードは【' + cardName + '】。\n#親ゴコロ診断\n';
+  const slug = CARD_SLUGS[cardName];
+  const shareUrl = slug ? (SITE_BASE + 'share-' + slug + '.html') : (SITE_BASE);
+  document.getElementById('shareBtn').href =
+    'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) +
+    '&url=' + encodeURIComponent(shareUrl);
+  document.getElementById('shareThreadsBtn').href =
+    'https://www.threads.net/intent/post?text=' + encodeURIComponent(text + shareUrl);
+}
+
+/* 「この診断を教える」：結果を含まないリンクだけをコピー */
+function tellFriend(){
+  const text = TELL_TEXT + SITE_BASE;
+  const btn = document.getElementById('tellBtn');
+  const done = () => {
+    btn.textContent = 'コピーしました。そのまま貼って渡せます';
+    setTimeout(() => { btn.textContent = 'この診断を教える（リンクをコピー）'; }, 2600);
+  };
+  const r = window._currentResult || {};
+  logEvent({event:'tell_click',
+    main: r.mainT ? TYPES[r.mainT].name : (r.key ? SPECIALS[r.key].name : ''),
+    sub: r.subT ? TYPES[r.subT].name : '', card: r.cardName || ''});
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done).catch(() => fallbackCopy(text, done));
+  } else {
+    fallbackCopy(text, done);
+  }
+}
+function fallbackCopy(text, done){
+  const ta = document.createElement('textarea');
+  ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta); ta.focus(); ta.select();
+  try { document.execCommand('copy'); done(); } catch(e){}
+  document.body.removeChild(ta);
+}
+
+function flipCard(){
+  document.getElementById('tarot').classList.add('flipped');
+  const c = window._currentCard;
+  document.getElementById('cardCaption').textContent = c ? (c.n + ' ・ ' + c.name) : 'あなたに出た1枚';
+}
+</script>
+
+<div id="demoPanel">
+  <h4>検収パネル（demo専用）</h4>
+  <div class="dgrid" id="demoGrid"></div>
+  <button class="toggle" onclick="document.getElementById('demoGrid').style.display=document.getElementById('demoGrid').style.display==='none'?'grid':'none'">開く / 閉じる</button>
+</div>
+<script>
+(function(){
+  const grid = document.getElementById('demoGrid');
+  const mains = Object.keys(CARD_MATRIX);
+  mains.forEach(m => {
+    Object.keys(CARD_MATRIX[m]).forEach(s => {
+      const b = document.createElement('button');
+      b.textContent = TYPES[m].name.replace('型','') + '×' + TYPES[s].name.replace('型','');
+      b.onclick = () => { renderResult(m, m, s, CARD_MATRIX[m][s]); show('result');
+        document.getElementById('tarot').classList.remove('flipped');
+        document.getElementById('cardCaption').textContent = 'カードをタップしてめくる'; };
+      grid.appendChild(b);
+    });
+  });
+  [['moya','心配のもや'],['mimamori','見守り上手']].forEach(([k,label]) => {
+    const b = document.createElement('button');
+    b.textContent = '特殊：' + label;
+    b.onclick = () => { renderResult(k, null, null, SPECIALS[k].card); show('result');
+      document.getElementById('tarot').classList.remove('flipped');
+      document.getElementById('cardCaption').textContent = 'カードをタップしてめくる'; };
+    grid.appendChild(b);
+  });
+})();
+</script>
+</body>
+</html>
